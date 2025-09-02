@@ -1,7 +1,7 @@
-package com.org.televora.Model;
+package com.org.televora.auth.Model;
 
-import com.org.televora.enums.Role;
-import com.org.televora.token.Token;
+import com.org.televora.auth.enums.Role;
+import com.org.televora.auth.token.Token;
 import jakarta.persistence.*;
 import lombok.*;
 import org.springframework.security.core.GrantedAuthority;

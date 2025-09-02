@@ -1,6 +1,6 @@
 package com.org.televora.config;
 
-import com.org.televora.Model.User;
+import com.org.televora.auth.Model.User;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;

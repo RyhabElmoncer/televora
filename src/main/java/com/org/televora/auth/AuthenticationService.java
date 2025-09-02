@@ -2,13 +2,13 @@ package com.org.televora.auth;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import com.org.televora.Model.User;
+import com.org.televora.auth.Model.User;
 import com.org.televora.config.JwtService;
-import com.org.televora.enums.Role;
-import com.org.televora.repository.UserRepository;
-import com.org.televora.token.Token;
-import com.org.televora.token.TokenRepository;
-import com.org.televora.token.TokenType;
+import com.org.televora.auth.enums.Role;
+import com.org.televora.auth.repository.UserRepository;
+import com.org.televora.auth.token.Token;
+import com.org.televora.auth.token.TokenRepository;
+import com.org.televora.auth.token.TokenType;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;

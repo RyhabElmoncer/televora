@@ -1,6 +1,6 @@
-package com.org.televora.repository;
+package com.org.televora.auth.repository;
 
-import com.org.televora.Model.User;
+import com.org.televora.auth.Model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;

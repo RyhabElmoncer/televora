@@ -1,6 +1,6 @@
-package com.org.televora.auditing;
+package com.org.televora.auth.auditing;
 
-import com.org.televora.Model.User;
+import com.org.televora.auth.Model.User;
 import org.springframework.data.domain.AuditorAware;
 import org.springframework.security.authentication.AnonymousAuthenticationToken;
 import org.springframework.security.core.Authentication;

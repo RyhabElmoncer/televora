@@ -1,6 +1,6 @@
 package com.org.televora.config;
 
-import com.org.televora.token.TokenRepository;
+import com.org.televora.auth.token.TokenRepository;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;

@@ -1,6 +1,6 @@
 package com.org.televora.auth;
 
-import com.org.televora.enums.Role;
+import com.org.televora.auth.enums.Role;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;

@@ -1,6 +1,6 @@
-package com.org.televora.token;
+package com.org.televora.auth.token;
 
-import com.org.televora.Model.User;
+import com.org.televora.auth.Model.User;
 import jakarta.persistence.*;
 import lombok.*;
 
