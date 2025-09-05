@@ -4,10 +4,9 @@ import com.org.televora.ForfaitMobile.Entity.ForfaitMobile;
 import com.org.televora.ForfaitMobile.dto.ForfaitMobileDto;
 import com.org.televora.ForfaitMobile.mapper.ForfaitMobileMapper;
 import com.org.televora.ForfaitMobile.repository.ForfaitMobileRepository;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
-
-import java.util.List;
-import java.util.stream.Collectors;
 
 @Service
 public class ForfaitMobileService {
@@ -39,10 +38,10 @@ public class ForfaitMobileService {
                 .orElseThrow(() -> new RuntimeException("ForfaitMobile not found"));
     }
 
-    public List<ForfaitMobileDto> getAll() {
-        return repository.findAll().stream()
-                .map(mapper::toDto)
-                .collect(Collectors.toList());
+    // Pagination
+    public Page<ForfaitMobileDto> getAll(Pageable pageable) {
+        return repository.findAll(pageable)
+                .map(mapper::toDto);
     }
 
     public void delete(Long id) {

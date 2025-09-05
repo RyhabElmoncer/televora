@@ -2,10 +2,11 @@ package com.org.televora.ForfaitMobile.controller;
 
 import com.org.televora.ForfaitMobile.dto.ForfaitMobileDto;
 import com.org.televora.ForfaitMobile.services.ForfaitMobileService;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
 
 @RestController
 @RequestMapping("/api/forfait-mobile")
@@ -32,9 +33,15 @@ public class ForfaitMobileController {
         return ResponseEntity.ok(service.getById(id));
     }
 
+    // Pagination
     @GetMapping
-    public ResponseEntity<List<ForfaitMobileDto>> getAll() {
-        return ResponseEntity.ok(service.getAll());
+    public ResponseEntity<Page<ForfaitMobileDto>> getAll(
+            @RequestParam(defaultValue = "0") int page,
+            @RequestParam(defaultValue = "10") int size) {
+
+        Pageable pageable = PageRequest.of(page, size);
+        Page<ForfaitMobileDto> result = service.getAll(pageable);
+        return ResponseEntity.ok(result);
     }
 
     @DeleteMapping("/{id}")
