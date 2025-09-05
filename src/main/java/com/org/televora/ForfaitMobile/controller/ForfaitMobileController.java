@@ -7,6 +7,7 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 @RestController
 @RequestMapping("/api/forfait-mobile")
@@ -19,14 +20,20 @@ public class ForfaitMobileController {
     }
 
     @PostMapping
-    public ResponseEntity<ForfaitMobileDto> create(@RequestBody ForfaitMobileDto dto) {
-        return ResponseEntity.ok(service.create(dto));
+    public ResponseEntity<ForfaitMobileDto> create(
+            @RequestPart("data") ForfaitMobileDto dto,
+            @RequestPart(value = "file", required = false) MultipartFile file) {
+        return ResponseEntity.ok(service.create(dto, file));
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<ForfaitMobileDto> update(@PathVariable Long id, @RequestBody ForfaitMobileDto dto) {
-        return ResponseEntity.ok(service.update(id, dto));
+    public ResponseEntity<ForfaitMobileDto> update(
+            @PathVariable Long id,
+            @RequestPart("data") ForfaitMobileDto dto,
+            @RequestPart(value = "file", required = false) MultipartFile file) {
+        return ResponseEntity.ok(service.update(id, dto, file));
     }
+
 
     @GetMapping("/{id}")
     public ResponseEntity<ForfaitMobileDto> getById(@PathVariable Long id) {
